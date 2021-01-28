@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val API_URL = "http://mattun-pattun.com/api/test";
+        val API_URL = "http://mattun-pattun.com/api/delete";
         HitAPITask().execute(API_URL)
     }
 
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
                 val url = URL(params[0])
                 connection = url.openConnection() as HttpURLConnection
-
+                connection.setRequestMethod("DELETE")
                 try {
                     //ステップ4:コネクションを開く
                     connection.connect()
