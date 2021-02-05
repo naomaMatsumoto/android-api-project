@@ -74,10 +74,13 @@ class HitAPITask: AsyncTask<String, String, String>(){
                 //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
             } catch (e: MalformedURLException) {
                 e.printStackTrace()
+                return ""
             } catch (e: IOException) {
                 e.printStackTrace()
+                return ""
             } catch (e: JSONException) {
                 e.printStackTrace()
+                return ""
             }
             //finallyで接続を切断してあげましょう。
             finally {
