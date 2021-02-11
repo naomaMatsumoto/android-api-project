@@ -2,6 +2,7 @@ package com.example.myapplicationtest3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,8 +10,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // 別クラスに呼び出せる
-        val API_URL = "http://mattun-pattun.com/api/delete";
-        HitAPITask().execute(API_URL)
+        val apiUrl = "http://mattun-pattun.com/api/delete";
+        val result = HitAPITask().execute(apiUrl, "DELETE")
+//        val parentJsonObj = JSONObject(result)
+        println(result)
+
     }
 }
-
