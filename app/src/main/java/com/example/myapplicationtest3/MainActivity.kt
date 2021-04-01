@@ -11,12 +11,29 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.json.JSONObject
+import com.google.android.material.navigation.NavigationView;
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+//        setContentView(R.layout.bottom_navigation)
+//        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+//        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+//            when (menuItem.itemId) {
+//                R.id.homeTab -> {
+//                }
+//                R.id.historyTab -> {
+//                }
+//                R.id.favouriteTab -> {
+//                }
+//            }
+//            false
+//        }
 
         // 別クラスに呼び出せる
         val apiUrl = "http://mattun-pattun.com/api/delete";
