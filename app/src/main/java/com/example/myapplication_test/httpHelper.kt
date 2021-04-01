@@ -1,4 +1,4 @@
-package com.example.myapplicationtest3
+package com.example.myapplication_test
 
 import android.os.AsyncTask
 import org.json.JSONException
