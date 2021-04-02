@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication_test.R
 
-class DashboardFragment : Fragment() {
+class Dashboard1Fragment : Fragment() {
 
     private lateinit var dashboardViewModel: Dashboard1ViewModel
 
