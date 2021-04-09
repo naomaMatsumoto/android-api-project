@@ -17,12 +17,12 @@
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.myapplication_test.ui.dashboard.Dashboard1Fragment"
+        android:name="com.example.myapplication_test.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/navigation_dashboard1"
-        android:name="com.example.myapplication_test.ui.dashboard.Dashboard1Fragment"
+        android:name="com.example.myapplication_test.ui.dashboard1.Dashboard1Fragment"
         android:label="@string/title_dashboard1"
         tools:layout="@layout/fragment_dashboard" />
 </navigation>
