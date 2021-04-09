@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         >
         <TextView
-            android:id="@+id/text_dashboard"
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -31,7 +31,7 @@
             android:text="password"
             />
         <EditText
-            android:id="@+id/edit_text１"
+            android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"

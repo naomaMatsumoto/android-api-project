@@ -44,38 +44,7 @@ class MainActivity : AppCompatActivity() {
         val result = HitAPITask().execute(apiUrl, "DELETE")
         println(result)
 
-//        setContentView(R.layout.fragment_dashboard)
-
-//        try {
-//            val btnSend: Button =  R.layout._dafragmentshboard.findViewById(R.id.btnSend)
-//        } catch (e: Exception) {
-//            println("error")
-//            println(e)
-//        }
-//        println(btnSend)
-//        btnSend.setOnClickListener {
-//            val aaa = "aaa";
-//            val textView: TextView = findViewById(R.id.text_home)
-//        }
-
-//        val hogeFragment = DashboardFragment()
-//        val transaction = supportFragmentManager.beginTransaction()
-//        transaction.add(R.id.container, hogeFragment)
-//        transaction.commit()
-
-//        fun onHogeFragmentAddFragment() {
-//            val hugaFragment = DashboardFragment()
-//            val transaction = supportFragmentManager.beginTransaction()
-//            transaction.replace(R.id.container, hugaFragment)
-//            transaction.addToBackStack(null) // バックスタックに保存する。呼び出さなければ積まれない。
-//            transaction.commit()
-//        }
     }
 
-    // MARK: OnboardSignUpTermsOfServiceListener
-    fun onClickNext() {
-        // TODO: Handle events.
-        println("bbbb")
-    }
 
 }
