@@ -2,9 +2,7 @@ package com.example.myapplication_test.ui.home
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -20,11 +18,14 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
 
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
+
         homeViewModel =
                 ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
@@ -81,4 +82,24 @@ class HomeFragment : Fragment() {
 
         return root
     }
+
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+////        super.onCreateOptionsMenu(menu, inflater)
+//
+////        val inflater: MenuInflater = inflater
+//        inflater.inflate(R.menu.bottom_nav_menu, menu)
+//
+//
+//        val item = menu.findItem(R.id.navigation_notifications)
+////        val item = menu.removeItem(R.id.navigation_notifications)
+//        menu.removeItem(R.id.navigation_notifications)
+//        item.isVisible = false
+//    }
+//    override fun onPrepareOptionsMenu(menu: Menu){
+//        super.onPrepareOptionsMenu(menu)
+//        val item = menu.findItem(R.id.navigation_notifications)
+////        menu.removeItem(R.id.navigation_notifications)
+//        item.isVisible = false
+//    }
+
 }

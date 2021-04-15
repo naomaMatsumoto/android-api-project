@@ -26,12 +26,23 @@ class HitAPITask: AsyncTask<String, String, String>(){
 
                 // methodを決定している
                 connection.requestMethod = params[1]
+                connection.doOutput = true
+                connection.setRequestProperty("Content-type", "application/json; charset=utf-8")
                 try {
                     //ステップ4:コネクションを開く
                     connection.connect()
                 } catch (e: Exception) {
                     println(e)
                 }
+
+                // Bodyの書き込み
+                val sendDataJson = "{\"aaaa\":\"hoge\",\"name\":\"hogehoge\"}"
+                val bodyData = sendDataJson.toByteArray()
+
+                val outputStream = connection.outputStream
+                outputStream.write(bodyData)
+                outputStream.flush()
+                outputStream.close()
 
                 //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
 

@@ -30,16 +30,15 @@ class DashboardFragment : Fragment() {
         val addFragment = root.findViewById<Button>(R.id.btnSend)
         addFragment.setOnClickListener {
             println("aaaaa")
-//            val email = root.findViewById(R.id.login_email)
             val email = root.findViewById<EditText>(R.id.login_email)
             val password = root.findViewById<EditText>(R.id.login_password)
             println(email.text)
             println(password.text)
 
             // 別クラスに呼び出せる
-            val apiUrl = "http://mattun-pattun.com/api/delete";
-            val result = HitAPITask().execute(apiUrl, "DELETE")
-            println(result)
+//            val apiUrl = "http://mattun-pattun.com/api/delete";
+//            val result = HitAPITask().execute(apiUrl, "DELETE")
+//            println(result)
 
         }
         return root

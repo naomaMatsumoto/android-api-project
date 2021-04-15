@@ -13,14 +13,14 @@
         android:layout_height="match_parent"
         >
         <TextView
-            android:id="@+id/login_email"
+            android:id="@+id/login_email_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="email"
         />
         <EditText
-            android:id="@+id/edit_text"
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView

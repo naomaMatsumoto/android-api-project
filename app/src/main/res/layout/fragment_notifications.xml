@@ -6,33 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment">
 
-
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-        <LinearLayout
-            android:id="@+id/LinearLayout"
-            android:orientation="vertical"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent">
-
-            <ImageView
-                android:src="@drawable/no_image"
-                android:scaleType="fitCenter"
-                android:layout_width="wrap_content"
+            >
+            <TextView
+                android:id="@+id/login_email"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/description"/>
+                android:textSize="20sp"
+                android:text="News Release"
+                />
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+            <LinearLayout
+                android:id="@+id/LinearLayout"
+                android:orientation="vertical"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
 
-            <ImageView
-                android:src="@drawable/no_image"
-                android:scaleType="fitCenter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/description"/>
-        </LinearLayout>
+                <ImageView
+                    android:src="@drawable/no_image"
+                    android:scaleType="fitCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/description"/>
 
-    </ScrollView>
+                <ImageView
+                    android:src="@drawable/no_image"
+                    android:scaleType="fitCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/description"/>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
