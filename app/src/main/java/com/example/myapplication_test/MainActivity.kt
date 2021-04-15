@@ -36,9 +36,16 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         // 別クラスに呼び出せる
-        val apiUrl = "http://mattun-pattun.com/api/delete";
-        val result = HitAPITask().execute(apiUrl, "DELETE")
-        println(result)
+//        val apiUrl = "http://mattun-pattun.com/api/delete";
+//        val result = HitAPITask().execute(apiUrl, "DELETE")
+//        println(result)
+
+
+
+
+
+
+
 
 //        R.id.navigation_notifications
 

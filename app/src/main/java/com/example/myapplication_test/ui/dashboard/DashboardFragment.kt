@@ -29,17 +29,25 @@ class DashboardFragment : Fragment() {
 
         val addFragment = root.findViewById<Button>(R.id.btnSend)
         addFragment.setOnClickListener {
-            println("aaaaa")
             val email = root.findViewById<EditText>(R.id.login_email)
             val password = root.findViewById<EditText>(R.id.login_password)
             println(email.text)
             println(password.text)
+            if(!email.text.isEmpty() && !password.text.isEmpty() ) {
 
-            // 別クラスに呼び出せる
-//            val apiUrl = "http://mattun-pattun.com/api/delete";
-//            val result = HitAPITask().execute(apiUrl, "DELETE")
-//            println(result)
+                // Bodyの書き込み
+//                val sendDataJson = "{\"username\":\"hoge\",\"password\":\"hogehoge\"}"
 
+                val sendDataJson = "content:\"{\"username\":\"hoge\",\"password\":\"hogehoge\"}"
+//                "{\"content: \{\"username"\:\"aaaa@dddd",\"password":"dfads"}"
+
+                val apiUrl = "https://aigtokyo.com/auth/local/login";
+                val result = HitAPITask().execute(apiUrl, "POST", sendDataJson)
+                println(result)
+                println("null chaude")
+            } else {
+                println("null です")
+            }
         }
         return root
     }

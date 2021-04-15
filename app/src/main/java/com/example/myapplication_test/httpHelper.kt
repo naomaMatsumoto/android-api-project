@@ -2,10 +2,10 @@ package com.example.myapplication_test
 
 import android.os.AsyncTask
 import org.json.JSONException
-import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+import java.io.OutputStream
 import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
@@ -28,6 +28,23 @@ class HitAPITask: AsyncTask<String, String, String>(){
                 connection.requestMethod = params[1]
                 connection.doOutput = true
                 connection.setRequestProperty("Content-type", "application/json; charset=utf-8")
+
+                println(params[2])
+                val bodyData = params[2]!!.toByteArray()
+                    connection.setChunkedStreamingMode(bodyData.size)
+//                val outputStream = connection.outputStream
+//                val outputStream: OutputStream = connection.outputStream
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+                try {
+                    val outputStream: OutputStream = connection.outputStream
+                    outputStream.write(bodyData)
+                    outputStream.flush()
+                    outputStream.close()
+                } catch (e: java.lang.Exception) {
+                    println(e)
+                }
+
                 try {
                     //ステップ4:コネクションを開く
                     connection.connect()
@@ -35,16 +52,7 @@ class HitAPITask: AsyncTask<String, String, String>(){
                     println(e)
                 }
 
-                // Bodyの書き込み
-                val sendDataJson = "{\"aaaa\":\"hoge\",\"name\":\"hogehoge\"}"
-                val bodyData = sendDataJson.toByteArray()
 
-                val outputStream = connection.outputStream
-                outputStream.write(bodyData)
-                outputStream.flush()
-                outputStream.close()
-
-                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
 
                 //とりあえず取得した文字をbufferに。
                 val stream = connection.inputStream
