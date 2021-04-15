@@ -18,6 +18,9 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="News Release"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+
                 />
         <ScrollView
             xmlns:android="http://schemas.android.com/apk/res/android"
