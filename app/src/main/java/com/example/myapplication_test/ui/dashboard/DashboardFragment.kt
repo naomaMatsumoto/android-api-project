@@ -26,7 +26,6 @@ class DashboardFragment : Fragment() {
                 ViewModelProvider(this).get(Dashboard1ViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
-
         val addFragment = root.findViewById<Button>(R.id.btnSend)
         addFragment.setOnClickListener {
             val email = root.findViewById<EditText>(R.id.login_email)
@@ -35,11 +34,7 @@ class DashboardFragment : Fragment() {
             println(password.text)
             if(!email.text.isEmpty() && !password.text.isEmpty() ) {
 
-                // Bodyの書き込み
-//                val sendDataJson = "{\"username\":\"hoge\",\"password\":\"hogehoge\"}"
-
-                val sendDataJson = "content:\"{\"username\":\"hoge\",\"password\":\"hogehoge\"}"
-//                "{\"content: \{\"username"\:\"aaaa@dddd",\"password":"dfads"}"
+                val sendDataJson = "content:\"{\"username\":\"${email.text}\",\"password\":\"${password.text}\"}"
 
                 val apiUrl = "https://aigtokyo.com/auth/local/login";
                 val result = HitAPITask().execute(apiUrl, "POST", sendDataJson)
