@@ -25,7 +25,8 @@ class HitAPITask: AsyncTask<String, String, String>(){
                 connection = url.openConnection() as HttpURLConnection
 
                 // methodを決定している
-                connection.requestMethod = params[1]
+                connection.requestMethod = "POST"
+//                connection.requestMethod = params[1]
                 connection.doOutput = true
                 connection.setRequestProperty("Content-type", "application/json; charset=utf-8")
 
@@ -52,6 +53,11 @@ class HitAPITask: AsyncTask<String, String, String>(){
                     println(e)
                 }
 
+
+                val statusCode = connection.responseCode
+                if (statusCode == HttpURLConnection.HTTP_OK) {
+//                    readStream(connection.inputStream)
+                }
 
 
                 //とりあえず取得した文字をbufferに。
