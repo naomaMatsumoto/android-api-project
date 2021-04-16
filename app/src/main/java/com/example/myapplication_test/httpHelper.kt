@@ -60,6 +60,7 @@ class HitAPITask: AsyncTask<String, String, String>(){
                 }
 
 
+            try {
                 //とりあえず取得した文字をbufferに。
                 val stream = connection.inputStream
                 reader = BufferedReader(InputStreamReader(stream))
@@ -72,12 +73,16 @@ class HitAPITask: AsyncTask<String, String, String>(){
                     }
                     buffer.append(line)
                 }
-
-                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
-
                 //先ほどbufferに入れた、取得した文字列
                 val jsonText = buffer.toString()
                 return jsonText;
+            } catch (exception: Exception) {
+             println(exception)
+            }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
 //                val parentJsonObj = JSONObject(jsonText)
 //

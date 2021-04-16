@@ -34,9 +34,11 @@ class DashboardFragment : Fragment() {
             println(password.text)
             if(!email.text.isEmpty() && !password.text.isEmpty() ) {
 
-                val sendDataJson = "content:\"{\"username\":\"${email.text}\",\"password\":\"${password.text}\"}"
+//                val sendDataJson = "content:\"{\"username\":\"${email.text}\",\"password\":\"${password.text}\"}"
+                val sendDataJson = "result:\"{\"mail\":\"${email.text}\",\"password\":\"${password.text}\"}"
 
-                val apiUrl = "https://aigtokyo.com/auth/local/login";
+//                val apiUrl = "https://aigtokyo.com/auth/local/login";
+                val apiUrl = "https://mattun-pattun.com/auth/local/login";
                 val result = HitAPITask().execute(apiUrl, "POST", sendDataJson)
                 println(result)
                 println("null chaude")
